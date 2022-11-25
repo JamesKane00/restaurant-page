@@ -9,8 +9,9 @@ const toggleActive = () => {
 };
 
 const clearContainer = () => {
-    const container = document.getElementById('info-container');
-    container.innerHTML = '';
+    const infoContainer = document.getElementById('info-container');
+    const mainContainer = document.querySelector('.container');
+    mainContainer.removeChild(infoContainer);
 }
 
 export const loadHome = (e) => {
