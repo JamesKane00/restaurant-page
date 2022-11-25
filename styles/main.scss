@@ -12,6 +12,7 @@ body {
 :root {
 	--font-color-main: #fafafa;
 	--container-color-main: #171717;
+    --container-color-lighter: #404040;
 }
 
 // main container styling
@@ -75,6 +76,7 @@ body {
 	position: absolute;
 	top: 13%;
 	left: 15%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .info-container p {
@@ -98,7 +100,7 @@ body {
 	grid-template-columns: 1fr 1fr;
 	overflow: scroll;
 	background-color: var(--container-color-main);
-	opacity: 95%;
+	opacity: 90%;
 	position: absolute;
 	top: 13%;
 	left: 15%;
@@ -114,16 +116,26 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+    height: 300px;
 	gap: 1rem;
+    background-color: var(--container-color-main);
 	text-align: center;
-    padding: 1.5rem;
-    border: 1px solid var(--font-color-main);
+    padding: 1rem;
+    padding-top: 2rem;
+    border: .1px dotted var(--font-color-main);
+    transition: all .35s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.recipe-container:hover {
+    cursor: pointer;
+    background-color: var(--container-color-lighter);
 }
 
 .menu-container img {
-	border-radius: 80px;
-	max-height: 240px;
-	width: 80%;
+	border-radius: 0;
+	height: 70%;
+	width: 75%;
 }
 
 .footer {
@@ -138,4 +150,10 @@ body {
 	position: absolute;
 	top: 91.5%;
 	width: 100%;
+}
+
+@media (max-width: 850px) {
+    .container div.menu-container {
+        grid-template-columns: 1fr;
+    }
 }
