@@ -2,6 +2,181 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/helpers.js":
+/*!************************!*\
+  !*** ./src/helpers.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "loadContact": () => (/* binding */ loadContact),
+/* harmony export */   "loadHome": () => (/* binding */ loadHome),
+/* harmony export */   "loadMenu": () => (/* binding */ loadMenu)
+/* harmony export */ });
+/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ "./src/home.js");
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ "./src/menu.js");
+
+
+var toggleActive = function toggleActive() {
+  var tabs = Array.from(document.querySelectorAll('.nav-button'));
+  tabs.forEach(function (tab) {
+    tab.classList.remove('active');
+  });
+};
+var clearContainer = function clearContainer() {
+  var container = document.getElementById('info-container');
+  container.innerHTML = '';
+};
+var loadHome = function loadHome(e) {
+  clearContainer();
+  toggleActive();
+  e.target.classList.add('active');
+  (0,_home__WEBPACK_IMPORTED_MODULE_0__["default"])();
+};
+var loadMenu = function loadMenu(e) {
+  clearContainer();
+  toggleActive();
+  e.target.classList.add('active');
+  (0,_menu__WEBPACK_IMPORTED_MODULE_1__["default"])();
+};
+var loadContact = function loadContact(e) {
+  clearContainer();
+  toggleActive();
+  e.target.classList.add('active');
+};
+
+/***/ }),
+
+/***/ "./src/home.js":
+/*!*********************!*\
+  !*** ./src/home.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ renderHome)
+/* harmony export */ });
+/* harmony import */ var _assets_chef_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/chef.jpg */ "./assets/chef.jpg");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers */ "./src/helpers.js");
+
+
+function renderHome() {
+  //get container
+  var content = document.querySelector('.container');
+  //create display container with p for restaurant description
+  var infoContainer = document.createElement('div');
+  infoContainer.classList.add('info-container');
+  infoContainer.setAttribute('id', 'info-container');
+
+  //p tag for info
+  var info = document.createElement('p');
+  info.classList.add('info');
+  info.textContent = 'The Finest Mythical Irish Spuds In All The Land, Forged In The Hot Fiery Kitchens Of Ferocious Irish Grandmothers';
+
+  //img for chef
+  var chefImg = document.createElement('img');
+  chefImg.setAttribute('id', 'chef-img');
+  chefImg.src = _assets_chef_jpg__WEBPACK_IMPORTED_MODULE_0__;
+
+  //where to order
+  var orderInfo = document.createElement('p');
+  orderInfo.classList.add('order-info');
+  orderInfo.textContent = 'Also Available For Delivery By Phone Or UberEats';
+  infoContainer.appendChild(info);
+  infoContainer.appendChild(chefImg);
+  infoContainer.appendChild(orderInfo);
+  content.appendChild(infoContainer);
+}
+
+/***/ }),
+
+/***/ "./src/menu.js":
+/*!*********************!*\
+  !*** ./src/menu.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ renderMenu)
+/* harmony export */ });
+/* harmony import */ var _assets_potato_meal_1_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/potato-meal-1.jpg */ "./assets/potato-meal-1.jpg");
+/* harmony import */ var _assets_potato_meal_2_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/potato-meal-2.jpg */ "./assets/potato-meal-2.jpg");
+/* harmony import */ var _assets_potato_meal_3_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/potato-meal-3.jpg */ "./assets/potato-meal-3.jpg");
+/* harmony import */ var _assets_potato_meal_4_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/potato-meal-4.jpg */ "./assets/potato-meal-4.jpg");
+
+
+
+
+function renderMenu() {
+  var menuContainer = document.createElement('div');
+  menuContainer.classList.add('menu-container');
+
+  // create recipes imgs, containers and ingredients list
+
+  // recipe 1 element creation
+  var containerOne = document.createElement('div');
+  containerOne.classList.add('container-one', 'recipe-container');
+  var recipeOne = document.createElement('img');
+  recipeOne.classList.add('recipe-one');
+  recipeOne.src = _assets_potato_meal_1_jpg__WEBPACK_IMPORTED_MODULE_0__;
+  var recipeOneInfo = document.createElement('p');
+  recipeOneInfo.innerText = '';
+
+  //recipe 1 appending elements
+  containerOne.appendChild(recipeOne);
+  containerOne.appendChild(recipeOneInfo);
+
+  // recipe 2 element creation
+  var containerTwo = document.createElement('div');
+  containerTwo.classList.add('container-two', 'recipe-container');
+  var recipeTwo = document.createElement('img');
+  recipeTwo.classList.add('recipe-two');
+  recipeTwo.src = _assets_potato_meal_2_jpg__WEBPACK_IMPORTED_MODULE_1__;
+  var recipeTwoInfo = document.createElement('p');
+  recipeTwoInfo.innerText = 'info goes here';
+
+  //recipe 2 appending elements
+  containerTwo.appendChild(recipeTwo);
+  containerTwo.appendChild(recipeTwoInfo);
+
+  // recipe 3 element creation
+  var containerThree = document.createElement('div');
+  containerThree.classList.add('container-three', 'recipe-container');
+  var recipeThree = document.createElement('img');
+  recipeThree.classList.add('recipe-three');
+  recipeThree.src = _assets_potato_meal_3_jpg__WEBPACK_IMPORTED_MODULE_2__;
+  var recipeThreeInfo = document.createElement('p');
+  recipeThreeInfo.innerText = 'info goes here';
+
+  //recipe 3 appending elements
+  containerThree.appendChild(recipeThree);
+  containerThree.appendChild(recipeThreeInfo);
+
+  // recipe 4 element creation
+  var containerFour = document.createElement('div');
+  containerFour.classList.add('container-four', 'recipe-container');
+  var recipeFour = document.createElement('img');
+  recipeFour.classList.add('recipe-four');
+  recipeFour.src = _assets_potato_meal_4_jpg__WEBPACK_IMPORTED_MODULE_3__;
+  var recipeFourInfo = document.createElement('p');
+  recipeFourInfo.innerText = 'info goes here';
+
+  //recipe 4 appending elements
+  containerFour.appendChild(recipeFour);
+  containerFour.appendChild(recipeFourInfo);
+
+  //appending recipes to menu container
+  menuContainer.appendChild(containerOne);
+  menuContainer.appendChild(containerTwo);
+  menuContainer.appendChild(containerThree);
+  menuContainer.appendChild(containerFour);
+}
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/main.scss":
 /*!*******************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/main.scss ***!
@@ -26,7 +201,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n  font-family: Arial, Helvetica, sans-serif;\n  color: var(--font-color-main);\n}\n\nbody {\n  padding: 0;\n  margin: 0;\n}\n\n:root {\n  --font-color-main: #fafafa;\n  --container-color-main: #171717;\n}\n\n.container {\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  height: 100vh;\n  width: 100vw;\n}\n\n.container .nav-bar {\n  background-color: var(--container-color-main);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0.25rem 2rem 0 2rem;\n  opacity: 80%;\n}\n\n.container .nav-bar h1 {\n  letter-spacing: 0.25rem;\n  font-style: italic;\n}\n\n.tab-container {\n  display: flex;\n  gap: 2rem;\n}\n\n.nav-button {\n  appearance: none;\n  border: none;\n  letter-spacing: 0.25rem;\n  font-size: 1.75ch;\n  color: var(--font-color-main);\n  padding: 0.5rem 2rem;\n  background-color: var(--container-color-main);\n  opacity: 90%;\n}\n\n.nav-button:hover {\n  cursor: pointer;\n}\n\n.nav-button.active {\n  border-bottom: 2px solid var(--font-color-main);\n}\n\n.info-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 3rem;\n  gap: 2rem;\n  height: 70%;\n  width: 70%;\n  background-color: var(--container-color-main);\n  opacity: 90%;\n  position: absolute;\n  top: 15%;\n  left: 15%;\n  border-radius: 24px;\n}\n\n.info-container p {\n  letter-spacing: 0.15rem;\n  line-height: 1.75rem;\n  width: 85%;\n  text-align: center;\n  font-style: italic;\n  font-size: 2ch;\n}\n\n.info-container img {\n  height: 100%;\n  width: 100%;\n  border-radius: 14rem;\n}\n\n.img-container {\n  height: 70%;\n  width: 70%;\n  background-color: var(--container-color-main);\n}\n\n.footer {\n  background-color: var(--container-color-main);\n  opacity: 80%;\n  color: var(--font-color-main);\n  letter-spacing: 0.25rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 2rem;\n  position: absolute;\n  top: 91.5%;\n  width: 100%;\n}", "",{"version":3,"sources":["webpack://./styles/main.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,yCAAA;EACA,6BAAA;AACJ;;AAEA;EACI,UAAA;EACA,SAAA;AACJ;;AAEA;EACI,0BAAA;EACA,+BAAA;AACJ;;AAIA;EACI,mDAAA;EACA,aAAA;EACA,YAAA;AADJ;;AAMA;EACI,6CAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,4BAAA;EACA,YAAA;AAHJ;;AAMA;EACI,uBAAA;EACA,kBAAA;AAHJ;;AAMA;EACI,aAAA;EACA,SAAA;AAHJ;;AAMA;EACI,gBAAA;EACA,YAAA;EACA,uBAAA;EACA,iBAAA;EACA,6BAAA;EACA,oBAAA;EACA,6CAAA;EACA,YAAA;AAHJ;;AAMA;EACI,eAAA;AAHJ;;AAMA;EACI,+CAAA;AAHJ;;AAOA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,SAAA;EACA,WAAA;EACA,UAAA;EACA,6CAAA;EACA,YAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EACA,mBAAA;AAJJ;;AAOA;EACI,uBAAA;EACA,oBAAA;EACA,UAAA;EACA,kBAAA;EACA,kBAAA;EACA,cAAA;AAJJ;;AAWA;EACI,YAAA;EACA,WAAA;EACA,oBAAA;AARJ;;AAWA;EACI,WAAA;EACA,UAAA;EACA,6CAAA;AARJ;;AAWA;EACI,6CAAA;EACA,YAAA;EACA,6BAAA;EACA,uBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,UAAA;EACA,WAAA;AARJ","sourcesContent":["* {\n    box-sizing: border-box;\n    font-family: Arial, Helvetica, sans-serif;\n    color: var(--font-color-main);\n}\n\nbody {\n    padding: 0;\n    margin: 0;\n}\n \n:root {\n    --font-color-main: #fafafa;\n    --container-color-main: #171717;\n}\n\n\n// main container styling\n.container {\n    background: url(../assets/potato-background.jpeg);\n    height: 100vh;\n    width: 100vw;\n}\n\n\n// nav bar & tab button styling\n.container .nav-bar {\n    background-color: var(--container-color-main);\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: .25rem 2rem 0 2rem;\n    opacity: 80%;\n}\n\n.container .nav-bar h1 {\n    letter-spacing: .25rem;\n    font-style: italic;\n}\n\n.tab-container {\n    display: flex;\n    gap: 2rem;\n}\n\n.nav-button {\n    appearance: none;\n    border: none;\n    letter-spacing: .25rem;\n    font-size: 1.75ch;\n    color: var(--font-color-main);\n    padding: .5rem 2rem;\n    background-color: var(--container-color-main);\n    opacity: 90%;\n}\n\n.nav-button:hover {\n    cursor: pointer;\n}\n\n.nav-button.active {\n    border-bottom: 2px solid var(--font-color-main);\n}\n\n// info container styling\n.info-container {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem;\n    gap: 2rem;\n    height: 70%;\n    width: 70%;\n    background-color: var(--container-color-main);\n    opacity: 90%;\n    position: absolute;\n    top: 15%;\n    left: 15%;\n    border-radius: 24px;\n}\n\n.info-container p {\n    letter-spacing: .15rem;\n    line-height: 1.75rem;\n    width: 85%;\n    text-align: center;\n    font-style: italic;\n    font-size: 2ch;\n}\n\n.info-container p:nth-child(1) {\n\n}\n\n.info-container img {\n    height: 100%;\n    width: 100%;\n    border-radius: 14rem;\n}\n\n.img-container {\n    height: 70%;\n    width: 70%;\n    background-color: var(--container-color-main);\n}\n\n.footer { \n    background-color: var(--container-color-main);\n    opacity: 80%;\n    color: var(--font-color-main);\n    letter-spacing: .25rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 2rem;\n    position: absolute;\n    top: 91.5%;\n    width: 100%;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n  font-family: Arial, Helvetica, sans-serif;\n  color: var(--font-color-main);\n}\n\nbody {\n  padding: 0;\n  margin: 0;\n}\n\n:root {\n  --font-color-main: #fafafa;\n  --container-color-main: #171717;\n}\n\n.container {\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  height: 100vh;\n  width: 100vw;\n}\n\n.container .nav-bar {\n  background-color: var(--container-color-main);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0.25rem 2rem 0 2rem;\n  opacity: 80%;\n}\n\n.container .nav-bar h1 {\n  letter-spacing: 0.25rem;\n  font-style: italic;\n}\n\n.tab-container {\n  display: flex;\n  gap: 2rem;\n}\n\n.nav-button {\n  appearance: none;\n  border: none;\n  letter-spacing: 0.25rem;\n  font-size: 1.75ch;\n  color: var(--font-color-main);\n  padding: 0.5rem 2rem;\n  background-color: var(--container-color-main);\n  opacity: 90%;\n}\n\n.nav-button:hover {\n  cursor: pointer;\n}\n\n.nav-button.active {\n  border-bottom: 2px solid var(--font-color-main);\n}\n\n.info-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 2rem;\n  gap: 3rem;\n  height: 75%;\n  width: 70%;\n  background-color: var(--container-color-main);\n  opacity: 95%;\n  position: absolute;\n  top: 13%;\n  left: 15%;\n}\n\n.info-container p {\n  letter-spacing: 0.15rem;\n  line-height: 1.75rem;\n  width: 90%;\n  font-size: 2ch;\n  text-align: center;\n  font-style: italic;\n  text-overflow: wrap;\n}\n\n.info-container img {\n  height: 70%;\n  width: 70%;\n  border-radius: 12rem;\n}\n\n.container div.menu-container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  overflow: scroll;\n}\n\n.container-one, .container-two, .container-three, .container-four {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 1rem;\n  text-align: center;\n}\n\n.menu-container img {\n  border-radius: 0px;\n  height: 160px;\n  width: 200px;\n}\n\n.footer {\n  background-color: var(--container-color-main);\n  opacity: 80%;\n  color: var(--font-color-main);\n  letter-spacing: 0.25rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 2rem;\n  position: absolute;\n  top: 91.5%;\n  width: 100%;\n}", "",{"version":3,"sources":["webpack://./styles/main.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,yCAAA;EACA,6BAAA;AACJ;;AAEA;EACI,UAAA;EACA,SAAA;AACJ;;AAEA;EACI,0BAAA;EACA,+BAAA;AACJ;;AAIA;EACI,mDAAA;EACA,aAAA;EACA,YAAA;AADJ;;AAMA;EACI,6CAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,4BAAA;EACA,YAAA;AAHJ;;AAMA;EACI,uBAAA;EACA,kBAAA;AAHJ;;AAMA;EACI,aAAA;EACA,SAAA;AAHJ;;AAMA;EACI,gBAAA;EACA,YAAA;EACA,uBAAA;EACA,iBAAA;EACA,6BAAA;EACA,oBAAA;EACA,6CAAA;EACA,YAAA;AAHJ;;AAMA;EACI,eAAA;AAHJ;;AAMA;EACI,+CAAA;AAHJ;;AAOA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,SAAA;EACA,WAAA;EACA,UAAA;EACA,6CAAA;EACA,YAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;AAJJ;;AAOA;EACI,uBAAA;EACA,oBAAA;EACA,UAAA;EACA,cAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;AAJJ;;AAOA;EACI,WAAA;EACA,UAAA;EACA,oBAAA;AAJJ;;AAOA;EACI,aAAA;EACA,8BAAA;EACA,gBAAA;AAJJ;;AAOA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,SAAA;EACA,kBAAA;AAJJ;;AAOA;EACI,kBAAA;EACA,aAAA;EACA,YAAA;AAJJ;;AAOA;EACI,6CAAA;EACA,YAAA;EACA,6BAAA;EACA,uBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,UAAA;EACA,WAAA;AAJJ","sourcesContent":["* {\n    box-sizing: border-box;\n    font-family: Arial, Helvetica, sans-serif;\n    color: var(--font-color-main);\n}\n\nbody {\n    padding: 0;\n    margin: 0;\n}\n \n:root {\n    --font-color-main: #fafafa;\n    --container-color-main: #171717;\n}\n\n\n// main container styling\n.container {\n    background: url(../assets/potato-background.jpeg);\n    height: 100vh;\n    width: 100vw;\n}\n\n\n// nav bar & tab button styling\n.container .nav-bar {\n    background-color: var(--container-color-main);\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: .25rem 2rem 0 2rem;\n    opacity: 80%;\n}\n\n.container .nav-bar h1 {\n    letter-spacing: .25rem;\n    font-style: italic;\n}\n\n.tab-container {\n    display: flex;\n    gap: 2rem;\n}\n\n.nav-button {\n    appearance: none;\n    border: none;\n    letter-spacing: .25rem;\n    font-size: 1.75ch;\n    color: var(--font-color-main);\n    padding: .5rem 2rem;\n    background-color: var(--container-color-main);\n    opacity: 90%;\n}\n\n.nav-button:hover {\n    cursor: pointer;\n}\n\n.nav-button.active {\n    border-bottom: 2px solid var(--font-color-main);\n}\n\n// info container styling\n.info-container {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    padding: 2rem;\n    gap: 3rem;\n    height: 75%;\n    width: 70%;\n    background-color: var(--container-color-main);\n    opacity: 95%;\n    position: absolute;\n    top: 13%;\n    left: 15%;\n}\n\n.info-container p {\n    letter-spacing: .15rem;\n    line-height: 1.75rem;\n    width: 90%;\n    font-size: 2ch;\n    text-align: center;\n    font-style: italic;\n    text-overflow: wrap;\n}\n\n.info-container img {\n    height: 70%;\n    width: 70%;\n    border-radius: 12rem;\n}\n\n.container div.menu-container {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    overflow: scroll;\n}\n\n.container-one, .container-two, .container-three, .container-four {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    gap: 1rem;\n    text-align: center;\n}\n\n.menu-container img {\n    border-radius: 0px;\n    height: 160px;\n    width: 200px;\n}\n\n.footer { \n    background-color: var(--container-color-main);\n    opacity: 80%;\n    color: var(--font-color-main);\n    letter-spacing: .25rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 2rem;\n    position: absolute;\n    top: 91.5%;\n    width: 100%;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -568,6 +743,46 @@ module.exports = __webpack_require__.p + "chef.jpg";
 
 module.exports = __webpack_require__.p + "potato-background.jpeg";
 
+/***/ }),
+
+/***/ "./assets/potato-meal-1.jpg":
+/*!**********************************!*\
+  !*** ./assets/potato-meal-1.jpg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "potato-meal-1.jpg";
+
+/***/ }),
+
+/***/ "./assets/potato-meal-2.jpg":
+/*!**********************************!*\
+  !*** ./assets/potato-meal-2.jpg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "potato-meal-2.jpg";
+
+/***/ }),
+
+/***/ "./assets/potato-meal-3.jpg":
+/*!**********************************!*\
+  !*** ./assets/potato-meal-3.jpg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "potato-meal-3.jpg";
+
+/***/ }),
+
+/***/ "./assets/potato-meal-4.jpg":
+/*!**********************************!*\
+  !*** ./assets/potato-meal-4.jpg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "potato-meal-4.jpg";
+
 /***/ })
 
 /******/ 	});
@@ -712,27 +927,11 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/main.scss */ "./styles/main.scss");
-/* harmony import */ var _assets_chef_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/chef.jpg */ "./assets/chef.jpg");
+/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ "./src/home.js");
+/* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers.js */ "./src/helpers.js");
 
 
-var toggleActive = function toggleActive() {
-  var tabs = Array.from(document.querySelectorAll('.nav-button'));
-  tabs.forEach(function (tab) {
-    tab.classList.remove('active');
-  });
-};
-var loadHome = function loadHome(e) {
-  toggleActive();
-  e.target.classList.add('active');
-};
-var loadMenu = function loadMenu(e) {
-  toggleActive();
-  e.target.classList.add('active');
-};
-var loadContact = function loadContact(e) {
-  toggleActive();
-  e.target.classList.add('active');
-};
+
 
 //get container
 var content = document.querySelector('.container');
@@ -753,54 +952,30 @@ var homeTab = document.createElement('button');
 homeTab.classList.add('nav-button', 'active');
 homeTab.setAttribute('id', 'home');
 homeTab.textContent = 'Home';
-homeTab.addEventListener('click', loadHome);
+homeTab.addEventListener('click', _helpers_js__WEBPACK_IMPORTED_MODULE_2__.loadHome);
 
 //create tab for loading menu page
 var menuTab = document.createElement('button');
 menuTab.classList.add('nav-button');
 menuTab.setAttribute('id', 'menu');
 menuTab.textContent = 'Menu';
-menuTab.addEventListener('click', loadMenu);
+menuTab.addEventListener('click', _helpers_js__WEBPACK_IMPORTED_MODULE_2__.loadMenu);
 
 //create tab for loading contact page
 var contactTab = document.createElement('button');
 contactTab.classList.add('nav-button');
 contactTab.setAttribute('id', 'contact');
 contactTab.textContent = 'Contact';
-contactTab.addEventListener('click', loadContact);
-
-//create display container with p for restaurant description
-var infoContainer = document.getElementById('info-container');
-infoContainer.classList.add('info-container');
-
-//p tag for info
-var info = document.createElement('p');
-info.classList.add('info');
-info.textContent = 'The Finest Mythical Irish Spuds In All The Land, Forged In The Hot Fiery Kitchens Of Ferocious Irish Grandmothers';
-var imgContainer = document.createElement('div');
-imgContainer.classList.add('img-container');
-
-//img for chef
-var chefImg = document.getElementById('chef-img');
-chefImg.src = _assets_chef_jpg__WEBPACK_IMPORTED_MODULE_1__;
-
-//where to order
-var orderInfo = document.createElement('p');
-orderInfo.classList.add('order-info');
-orderInfo.textContent = 'Also Available For Delivery By Phone Or UberEats';
+contactTab.addEventListener('click', _helpers_js__WEBPACK_IMPORTED_MODULE_2__.loadContact);
 navBar.appendChild(pageHeader);
 tabContainer.appendChild(homeTab);
 tabContainer.appendChild(menuTab);
 tabContainer.appendChild(contactTab);
 navBar.appendChild(tabContainer);
-infoContainer.appendChild(info);
-imgContainer.appendChild(chefImg);
-infoContainer.appendChild(imgContainer);
-infoContainer.appendChild(orderInfo);
 content.appendChild(navBar);
-content.appendChild(infoContainer);
+(0,_home__WEBPACK_IMPORTED_MODULE_1__["default"])();
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle6ff5553c1c5666b548c8.js.map
+//# sourceMappingURL=bundle94dedd2d9210cca441c5.js.map

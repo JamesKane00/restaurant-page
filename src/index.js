@@ -1,27 +1,6 @@
 import '../styles/main.scss';
-import chef from '../assets/chef.jpg';
-
-const toggleActive = () => {
-	const tabs = Array.from(document.querySelectorAll('.nav-button'));
-	tabs.forEach((tab) => {
-		tab.classList.remove('active');
-	});
-};
-
-const loadHome = (e) => {
-	toggleActive();
-	e.target.classList.add('active');
-};
-
-const loadMenu = (e) => {
-	toggleActive();
-	e.target.classList.add('active');
-};
-
-const loadContact = (e) => {
-	toggleActive();
-	e.target.classList.add('active');
-};
+import renderHome from './home';
+import { loadHome, loadMenu, loadContact, toggleSelect } from './helpers.js';
 
 //get container
 const content = document.querySelector('.container');
@@ -59,38 +38,12 @@ contactTab.setAttribute('id', 'contact');
 contactTab.textContent = 'Contact';
 contactTab.addEventListener('click', loadContact);
 
-//create display container with p for restaurant description
-const infoContainer = document.getElementById('info-container')
-infoContainer.classList.add('info-container');
-
-//p tag for info
-const info = document.createElement('p');
-info.classList.add('info');
-info.textContent =
-	'The Finest Mythical Irish Spuds In All The Land, Forged In The Hot Fiery Kitchens Of Ferocious Irish Grandmothers';
-
-const imgContainer = document.createElement('div');
-imgContainer.classList.add('img-container');
-
-//img for chef
-const chefImg = document.getElementById('chef-img');
-chefImg.src = chef;
-
-//where to order
-const orderInfo = document.createElement('p');
-orderInfo.classList.add('order-info');
-orderInfo.textContent = 'Also Available For Delivery By Phone Or UberEats';
-
 navBar.appendChild(pageHeader);
 tabContainer.appendChild(homeTab);
 tabContainer.appendChild(menuTab);
 tabContainer.appendChild(contactTab);
 navBar.appendChild(tabContainer);
 
-infoContainer.appendChild(info);
-imgContainer.appendChild(chefImg)
-infoContainer.appendChild(imgContainer);
-infoContainer.appendChild(orderInfo);
-
 content.appendChild(navBar);
-content.appendChild(infoContainer);
+
+renderHome();
