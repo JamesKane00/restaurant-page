@@ -1,7 +1,7 @@
 import { loadHome, loadMenu, loadContact, toggleSelect } from './helpers';
 import locationMarker from '../assets/location.svg';
 import phone from '../assets/phone.svg';
-import mapImg from '../assets/map.png';
+import mapImg from '../assets/map.jpeg';
 
 export default function renderContact() {
     const container = document.querySelector('.container');

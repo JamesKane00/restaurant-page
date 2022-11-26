@@ -15,12 +15,15 @@ export default function renderMenu() {
     const createMenuItem = (recipeNum, description) => {
         let container = document.createElement('div');
         container.classList.add('recipe-container');
+        let imgContainer = document.createElement('div')
+        imgContainer.classList.add('menu-img-container')
         let img = document.createElement('img');
         img.src = `${recipeNum}`
         let recipeInfo = document.createElement('p');
         recipeInfo.innerText = `${description}`;
 
-        container.appendChild(img);
+        imgContainer.appendChild(img);
+        container.appendChild(imgContainer);
         container.appendChild(recipeInfo);
         menuContainer.appendChild(container);
     }
@@ -38,7 +41,7 @@ export default function renderMenu() {
 
     const menuItemThree = createMenuItem(
         mealThree,
-        'Refreshing Roast Potato Salad With Broccoli, Corn, Carrots, Red Onions & Sesame Seeds'
+        'Oven-Baked Halloween Baked Potatoes To Scare The Family'
     )
 
 	const menuItemFour = createMenuItem(
@@ -48,7 +51,7 @@ export default function renderMenu() {
 
 	const menuItemFive = createMenuItem(
         mealFive,
-        'Delicious Crispy, Oven-Baked Curly Fries Seasoned With Paprika & Sweet Curry Powder, Served With Ketchup'
+        'Delicious Crispy, Oven-Baked Potato Wedges Fries Seasoned With Paprika, Salt & Pepper'
     )
 	
     const menuItemSix = createMenuItem(
