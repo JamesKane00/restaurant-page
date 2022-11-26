@@ -1,5 +1,6 @@
 import renderHome from './home';
 import renderMenu from './menu';
+import renderContact from './contact';
 
 const toggleActive = () => {
 	const tabs = Array.from(document.querySelectorAll('.nav-button'));
@@ -9,9 +10,9 @@ const toggleActive = () => {
 };
 
 const clearContainer = () => {
-    const infoContainer = document.getElementById('info-container');
     const mainContainer = document.querySelector('.container');
-    mainContainer.removeChild(infoContainer);
+    const nav = document.querySelector('.nav-bar');
+    mainContainer.removeChild(nav.nextSibling);
 }
 
 export const loadHome = (e) => {
@@ -32,4 +33,5 @@ export const loadContact = (e) => {
     clearContainer();
 	toggleActive();
 	e.target.classList.add('active');
+    renderContact();
 };

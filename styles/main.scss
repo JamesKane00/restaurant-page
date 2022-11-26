@@ -120,8 +120,7 @@ body {
 	gap: 1rem;
     background-color: var(--container-color-main);
 	text-align: center;
-    padding: 1rem;
-    padding-top: 2rem;
+    padding: 2rem;
     border: .1px dotted var(--font-color-main);
     transition: all .35s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -135,7 +134,48 @@ body {
 .menu-container img {
 	border-radius: 0;
 	height: 70%;
-	width: 75%;
+	width: 85%;
+}
+
+.recipe-container p {
+    font-size: 1.5ch;
+    font-style: italic;
+    letter-spacing: .1rem;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 80px 1fr;
+    background-color: var(--container-color-main);
+    opacity: 90%;
+    position: absolute;
+	top: 13%;
+	left: 15%;
+	padding: 2.5rem;
+	grid-column-gap: 2.5rem;
+    grid-row-gap: 1rem;
+	height: 70%;
+	width: 70%;
+    letter-spacing: .1rem;
+}
+
+.contact-container div {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-container img:nth-child(1),
+.contact-container img:nth-child(2) {
+    height: 30px;
+    width: 30px;
+    filter: invert(100%) sepia(0%) saturate(1372%) hue-rotate(239deg) brightness(112%) contrast(96%);
+}
+
+.contact-container img:nth-child(3) {
+    width: 100%;
+    height: 100%;
 }
 
 .footer {
