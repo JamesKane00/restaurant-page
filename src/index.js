@@ -1,5 +1,6 @@
 import '../styles/main.scss';
 import renderHome from './home';
+import gitHub from '../assets/github.svg';
 import { loadHome, loadMenu, loadContact, toggleSelect } from './helpers.js';
 
 //get container
@@ -37,6 +38,10 @@ contactTab.classList.add('nav-button');
 contactTab.setAttribute('id', 'contact');
 contactTab.textContent = 'Contact';
 contactTab.addEventListener('click', loadContact);
+
+const gitIcon = document.getElementById('git-hub');
+gitIcon.src = gitHub;
+gitIcon.addEventListener('click', () => location.href='https://github.com/JamesKane00/restaurant-page');
 
 navBar.appendChild(pageHeader);
 tabContainer.appendChild(homeTab);
